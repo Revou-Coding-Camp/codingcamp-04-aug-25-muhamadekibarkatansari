@@ -1,0 +1,68 @@
+<!DOCTYPE html>
+<html lang="id">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>To-Do List</title>
+  <link rel="stylesheet" href="style.css">
+</head>
+<body>
+  <div class="todo-container">
+    <h1>Todo List</h1>
+    <div class="todo-form">
+      <div class="input-group">
+        <input type="text" id="todo-input" placeholder="Add a todo...">
+        <div class="error-message" id="task-error"></div>
+      </div>
+      <div class="input-group">
+        <input type="date" id="date-input">
+        <div class="error-message" id="date-error"></div>
+      </div>
+      <button id="add-btn">+</button>
+    </div>
+    <div class="todo-actions">
+      <button id="filter-btn">FILTER</button>
+      <button id="delete-all-btn">DELETE ALL</button>
+    </div>
+    <div id="filter-info" class="filter-info"></div>
+    <table class="todo-table">
+      <thead>
+        <tr>
+          <th>Task</th>
+          <th>Due Date</th>
+          <th>Status</th>
+          <th>Actions</th>
+        </tr>
+      </thead>
+      <tbody id="todo-table-body">
+        <tr><td colspan="4" class="no-task">No task found</td></tr>
+      </tbody>
+    </table>
+  </div>
+
+  <!-- Modal Konfirmasi Delete All -->
+  <div id="popup-overlay" class="popup-overlay">
+    <div class="popup-modal">
+      <p>Yakin ingin menghapus semua tugas?</p>
+      <div class="popup-buttons">
+        <button id="confirm-delete-btn" class="confirm-btn">Delete All</button>
+        <button id="cancel-delete-btn" class="cancel-btn">Cancel</button>
+      </div>
+    </div>
+  </div>
+  <!-- Modal Peringatan Jika Tidak Ada Tugas -->
+<div id="empty-popup" class="popup-overlay">
+  <div class="popup-modal">
+    <p>Tidak ada tugas untuk dihapus.</p>
+    <div class="popup-buttons">
+      <button id="ok-empty-btn" class="cancel-btn">OK</button>
+    </div>
+  </div>
+</div>
+
+  <!-- Toast Notification -->
+  <div id="toast" class="toast">Data berhasil dihapus</div>
+
+  <script src="script.js"></script>
+</body>
+</html>

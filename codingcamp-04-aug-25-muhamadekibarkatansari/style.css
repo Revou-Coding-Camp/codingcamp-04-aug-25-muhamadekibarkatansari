@@ -1,0 +1,233 @@
+/* Semua style kamu sebelumnya tetap */
+
+body {
+  margin: 0;
+  font-family: 'Segoe UI', sans-serif;
+  background-color: #0f172a;
+  color: #e2e8f0;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  min-height: 100vh;
+}
+
+.todo-container {
+  background-color: #1e293b;
+  padding: 30px;
+  border-radius: 12px;
+  width: 95%;
+  max-width: 650px;
+  box-shadow: 0 0 25px rgba(121, 213, 241, 0.4);
+}
+
+h1 {
+  text-align: center;
+  margin-bottom: 25px;
+  color: #92dfe9;
+  font-weight: bold;
+}
+
+.input-group {
+    box-shadow: 0 0 25px rgba(158, 231, 253, 0.4);
+}
+
+.todo-form {
+  display: flex;
+  gap: 10px;
+  margin-bottom: 15px;
+}
+
+.input-group {
+  display: flex;
+  flex-direction: column;
+  flex: 1;
+}
+
+.todo-form input,
+.todo-form button {
+  padding: 10px;
+  border-radius: 6px;
+  border: none;
+  font-size: 14px;
+}
+
+#todo-input {
+  flex: 2;
+}
+
+#date-input {
+  flex: 1;
+}
+
+#add-btn {
+  background-color: #6366f1;
+  color: #fff;
+  cursor: pointer;
+  transition: background 0.3s ease;
+}
+
+#add-btn:hover {
+  background-color: #4f46e5;
+}
+
+.todo-actions {
+  display: flex;
+  justify-content: space-between;
+  margin-bottom: 15px;
+}
+
+.todo-actions button {
+  background-color: #334155;
+  color: white;
+  padding: 8px 16px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+  font-weight: 500;
+  transition: background 0.3s ease;
+}
+
+#delete-all-btn {
+  background-color: #ef4444;
+}
+
+.todo-actions button:hover {
+  opacity: 0.8;
+}
+
+.todo-table {
+  width: 100%;
+  border-collapse: collapse;
+  background-color: #0f172a;
+}
+
+th, td {
+  padding: 12px;
+  text-align: center;
+}
+
+thead {
+  background-color: #1e293b;
+}
+
+tbody tr:nth-child(even) {
+  background-color: #1e293b;
+}
+
+tbody tr:nth-child(odd) {
+  background-color: #0f172a;
+}
+
+button.action-btn {
+  margin: 0 3px;
+  padding: 5px 8px;
+  font-size: 13px;
+  border-radius: 5px;
+  border: none;
+  cursor: pointer;
+}
+
+button.done {
+  background-color: #10b981;
+  color: white;
+}
+
+button.delete {
+  background-color: #ef4444;
+  color: white;
+}
+
+.no-task {
+  text-align: center;
+  color: #94a3b8;
+}
+
+.error-message {
+  font-size: 12px;
+  color: #f87171;
+  margin-top: 4px;
+}
+
+.filter-info {
+  text-align: center;
+  color: #facc15;
+  font-size: 14px;
+  margin-bottom: 10px;
+}
+
+/* Modal */
+.popup-overlay {
+  display: none;
+  position: fixed;
+  z-index: 999;
+  left: 0;
+  top: 0;
+  width: 100vw;
+  height: 100vh;
+  background-color: rgba(0, 0, 0, 0.6);
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+}
+
+.popup-overlay.show {
+  display: flex;
+  opacity: 1;
+}
+
+.popup-modal {
+  background-color: #1e293b;
+  padding: 20px 30px;
+  border-radius: 10px;
+  text-align: center;
+  color: white;
+  box-shadow: 0 0 20px rgba(0,0,0,0.3);
+}
+
+.popup-buttons {
+  margin-top: 20px;
+  display: flex;
+  justify-content: center;
+  gap: 20px;
+}
+
+.confirm-btn {
+  background-color: #ef4444;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+.cancel-btn {
+  background-color: #64748b;
+  border: none;
+  padding: 10px 16px;
+  border-radius: 5px;
+  color: white;
+  cursor: pointer;
+}
+
+/* Toast */
+.toast {
+  position: fixed;
+  bottom: 30px;
+  left: 50%;
+  transform: translateX(-50%);
+  background-color: #16a34a;
+  color: white;
+  padding: 12px 24px;
+  border-radius: 8px;
+  font-size: 14px;
+  opacity: 0;
+  pointer-events: none;
+  transition: opacity 0.5s ease, transform 0.5s ease;
+  z-index: 1000;
+}
+
+.toast.show {
+  opacity: 5;
+  transform: translateX(-50%) translateY(0);
+}
